@@ -41,6 +41,13 @@ Widget::Widget(QWidget *parent)
 
 
     // 信号与槽关联的方式2:connect()旧式函数
+
+
+    //参数1：信号发起者：参数2：触发的信号：参数3：信号接收者：参数4：接收的槽函数
+    // SIGNAL()：宏两数，求信号的首地址
+    // SLOT()：宏两数，求槽两数首地址
+    // 将btn3 的clicked信号与 this当前类对象触 buttonpressed 槽函数进行关联
+    connect(btn3,SIGNAL(clicked(bool)),this,SLOT(btn_pressed()));
 }
 
 void Widget::btn_pressed()
