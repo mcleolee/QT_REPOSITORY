@@ -28,7 +28,8 @@ Widget::Widget(QWidget *parent)
 void Widget::picShow()
 {
     // setPixmap() 让label显示图片
-    lab2->setPixmap(QPixmap(":/1.jpg"));
+    // .scaled() 访问前面成员，缩放到某个控件的大小
+    lab2->setPixmap(QPixmap(":/IMG_6513.PNG").scaled(lab2->width(),lab2->height()));
 }
 
 Widget::~Widget()

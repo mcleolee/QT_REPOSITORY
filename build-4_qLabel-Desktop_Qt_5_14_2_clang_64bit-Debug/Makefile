@@ -785,7 +785,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_pic.cpp
 qrc_pic.cpp: ../4_QLabel/pic.qrc \
 		../../Qt5.14.2/5.14.2/clang_64/bin/rcc \
-		../4_QLabel/1.png
+		../4_QLabel/1.png \
+		../4_QLabel/IMG_6513.PNG
 	/Users/raven/Qt5.14.2/5.14.2/clang_64/bin/rcc -name pic ../4_QLabel/pic.qrc -o qrc_pic.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
