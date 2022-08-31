@@ -13,9 +13,12 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
-
+private slots:
+    void picShow();
 private:
     QLabel *lab1, *lab2;
     QPushButton *btn;
+
+
 };
 #endif // WIDGET_H

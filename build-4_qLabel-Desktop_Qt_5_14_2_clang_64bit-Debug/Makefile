@@ -53,9 +53,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../4_QLabel/main.cpp \
-		../4_QLabel/widget.cpp moc_widget.cpp
+		../4_QLabel/widget.cpp qrc_pic.cpp \
+		moc_widget.cpp
 OBJECTS       = main.o \
 		widget.o \
+		qrc_pic.o \
 		moc_widget.o
 DIST          = ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/qdevice.pri \
@@ -237,6 +239,7 @@ DIST          = ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf \
+		../4_QLabel/.qmake.stash \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf \
@@ -469,6 +472,7 @@ Makefile: ../4_QLabel/4_QLabel.pro ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-c
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf \
@@ -498,6 +502,7 @@ Makefile: ../4_QLabel/4_QLabel.pro ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-c
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/yacc.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/lex.prf \
 		../4_QLabel/4_QLabel.pro \
+		../4_QLabel/pic.qrc \
 		../../Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		../../Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/Resources/QtGui.prl \
 		../../Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Resources/QtCore.prl
@@ -682,6 +687,7 @@ Makefile: ../4_QLabel/4_QLabel.pro ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-c
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf:
@@ -711,6 +717,7 @@ Makefile: ../4_QLabel/4_QLabel.pro ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-c
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/yacc.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/lex.prf:
 ../4_QLabel/4_QLabel.pro:
+../4_QLabel/pic.qrc:
 ../../Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 ../../Qt5.14.2/5.14.2/clang_64/lib/QtGui.framework/Resources/QtGui.prl:
 ../../Qt5.14.2/5.14.2/clang_64/lib/QtCore.framework/Resources/QtCore.prl:
@@ -743,6 +750,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../4_QLabel/pic.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../4_QLabel/widget.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../4_QLabel/main.cpp ../4_QLabel/widget.cpp $(DISTDIR)/
@@ -755,6 +763,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r 4_QLabel.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -771,8 +780,14 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_pic.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_pic.cpp
+qrc_pic.cpp: ../4_QLabel/pic.qrc \
+		../../Qt5.14.2/5.14.2/clang_64/bin/rcc \
+		../4_QLabel/1.png
+	/Users/raven/Qt5.14.2/5.14.2/clang_64/bin/rcc -name pic ../4_QLabel/pic.qrc -o qrc_pic.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -807,7 +822,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean 
 
 ####### Compile
 
@@ -830,6 +845,9 @@ widget.o: ../4_QLabel/widget.cpp ../4_QLabel/widget.h \
 		../../Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../Qt5.14.2/5.14.2/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../4_QLabel/widget.cpp
+
+qrc_pic.o: qrc_pic.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_pic.o qrc_pic.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp

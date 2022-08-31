@@ -21,6 +21,14 @@ Widget::Widget(QWidget *parent)
     btn->move(0, (lab2->y()+lab2->height()));
 
     lab1->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+
+    connect(btn, SIGNAL(clicked(bool)),this,SLOT(picShow()));
+}
+
+void Widget::picShow()
+{
+    // setPixmap() 让label显示图片
+    lab2->setPixmap(QPixmap(":/1.jpg"));
 }
 
 Widget::~Widget()
