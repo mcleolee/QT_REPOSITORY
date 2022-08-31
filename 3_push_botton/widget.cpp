@@ -53,6 +53,14 @@ Widget::Widget(QWidget *parent)
 void Widget::btn_pressed()
 {
     qDebug() << "-------------";
+
+    // say() 将字符串这个文本数据转换语音并说出来
+     // 但是我没有语音这个模块
+
+    // setStyleSheet 设置控件的样式表
+    btn1->setStyleSheet("border-radius:15dx;background-color:yellow;");
+
+
 }
 
 Widget::~Widget()

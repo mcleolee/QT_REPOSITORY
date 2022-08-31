@@ -6,8 +6,12 @@
 #include <QIcon>
 #include <QDebug>
 
+
+
 // 引入按钮类的头文件
 #include <QPushButton>
+
+// #include <QTextToSpeech>
 
 class Widget : public QWidget
 {
