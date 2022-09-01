@@ -7,8 +7,6 @@ Widget::Widget(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-    connect(btn,SIGNAL(clicked(book),this),SLOT(QLineEdit(edit)));
 }
 
 Widget::~Widget()
@@ -17,7 +15,10 @@ Widget::~Widget()
 }
 
 
-void Widget::on_pushButton_clicked()
-{
 
+void Widget::on_btn_1_clicked()
+{
+    ui->edit->clear();
 }
+
+

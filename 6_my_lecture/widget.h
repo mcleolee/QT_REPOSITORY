@@ -2,6 +2,9 @@
 #define WIDGET_H
 
 #include <QWidget>
+// 引入按钮类的头文件
+#include <QPushButton>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -16,9 +19,12 @@ public:
     ~Widget();
 
 private slots:
-    void on_pushButton_clicked();
+
+    void on_btn_1_clicked();
 
 private:
     Ui::Widget *ui;
+
+
 };
 #endif // WIDGET_H

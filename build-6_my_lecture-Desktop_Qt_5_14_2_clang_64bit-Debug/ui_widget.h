@@ -20,23 +20,22 @@ QT_BEGIN_NAMESPACE
 class Ui_Widget
 {
 public:
-    QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QLineEdit *edit;
+    QPushButton *btn_1;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
         Widget->resize(363, 274);
-        lineEdit = new QLineEdit(Widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(120, 70, 113, 21));
-        pushButton = new QPushButton(Widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(120, 160, 113, 32));
+        edit = new QLineEdit(Widget);
+        edit->setObjectName(QString::fromUtf8("edit"));
+        edit->setGeometry(QRect(120, 70, 113, 21));
+        btn_1 = new QPushButton(Widget);
+        btn_1->setObjectName(QString::fromUtf8("btn_1"));
+        btn_1->setGeometry(QRect(120, 160, 113, 32));
 
         retranslateUi(Widget);
-        QObject::connect(pushButton, SIGNAL(clicked()), lineEdit, SLOT(clear()));
 
         QMetaObject::connectSlotsByName(Widget);
     } // setupUi
@@ -44,7 +43,7 @@ public:
     void retranslateUi(QWidget *Widget)
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
-        pushButton->setText(QCoreApplication::translate("Widget", "PushButton", nullptr));
+        btn_1->setText(QCoreApplication::translate("Widget", "PushButton", nullptr));
     } // retranslateUi
 
 };
