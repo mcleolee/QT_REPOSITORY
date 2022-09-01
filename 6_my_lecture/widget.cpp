@@ -19,6 +19,7 @@ Widget::~Widget()
 void Widget::on_btn_1_clicked()
 {
     ui->edit->clear();
+    connect(
 }
 
 
