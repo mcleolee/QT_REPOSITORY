@@ -22,7 +22,6 @@ class Ui_Widget
 public:
     QLineEdit *lineEdit;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
 
     void setupUi(QWidget *Widget)
     {
@@ -35,9 +34,6 @@ public:
         pushButton = new QPushButton(Widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(120, 160, 113, 32));
-        pushButton_2 = new QPushButton(Widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(0, 0, 113, 32));
 
         retranslateUi(Widget);
         QObject::connect(pushButton, SIGNAL(clicked()), lineEdit, SLOT(clear()));
@@ -49,7 +45,6 @@ public:
     {
         Widget->setWindowTitle(QCoreApplication::translate("Widget", "Widget", nullptr));
         pushButton->setText(QCoreApplication::translate("Widget", "PushButton", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Widget", "PushButton", nullptr));
     } // retranslateUi
 
 };
