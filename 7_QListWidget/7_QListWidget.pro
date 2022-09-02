@@ -1,3 +1,5 @@
+# 没有写完，对照伟批发的重新写一遍吧
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets

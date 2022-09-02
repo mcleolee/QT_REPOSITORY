@@ -13,7 +13,7 @@ Widget::~Widget()
     delete ui;
 }
 
-// 在列表部件中点击任意一行，都会触发 currentRowChanged (int currentRow)信号，
+// 在列表部件中点击任意一行，都会 触发 currentRowChanged (int currentRow)信号，
 // 并将当前的行号通过形参传递
 void Widget::on_listWidget_currentRowChanged(int currentRow)
 {
