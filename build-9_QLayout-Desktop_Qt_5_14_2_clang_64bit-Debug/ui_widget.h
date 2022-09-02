@@ -28,9 +28,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
-    QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton_4;
-    QSpacerItem *horizontalSpacer_3;
     QPushButton *pushButton_3;
     QPushButton *pushButton_6;
     QSpacerItem *verticalSpacer;
@@ -59,18 +57,10 @@ public:
 
         horizontalLayout->addWidget(pushButton_2);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
         pushButton_4 = new QPushButton(layoutWidget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
 
         horizontalLayout->addWidget(pushButton_4);
-
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_3);
 
         pushButton_3 = new QPushButton(layoutWidget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
