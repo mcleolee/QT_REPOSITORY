@@ -9,6 +9,11 @@
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QDockWidget>
+#include <QTextEdit>
+#include <QStatusBar>
+#include <QString>
+
 
 class MainWindow : public QMainWindow
 {

@@ -75,9 +75,57 @@ MainWindow::MainWindow(QWidget *parent)
     QToolBar *tool3 = new QToolBar("built");
     // 添加工具档到当前界面的某个 初始区域
     addToolBar(Qt::BottomToolBarArea, tool3);
-    tool3->addWidget(new QLabel("Deteils about "));
+    tool3->addWidget(new QLabel("Deteils about      "));
     tool3->addWidget(new QLabel("About"));
 
+    // 设置状态提示信息
+    newAct->setStatusTip("create a fucking new file");
+    openAct->setStatusTip("open a god damn file");
+    saveAct->setStatusTip("save the fucking file");
+    saveAsAct->setStatusTip("save the fucking file as...");
+    closeAct->setStatusTip("CLOSE the fucking file!!!!");
+
+
+
+    // *********************构造工作区********************* //
+    // 构造一个工作区
+    QDockWidget *dock = new QDockWidget("Work Space 1");
+
+    // 设置工作区允许拖动的区域
+    dock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+
+    // 构造工作区的中央窗口部件
+    QTextEdit *tdt = new QTextEdit;
+
+    //设置工作区的中央窗口部件
+    dock->setWidget(tdt);
+
+    // 将工作区添加到当前主界面
+    this->addDockWidget(Qt::TopDockWidgetArea, dock);
+
+    //构造一个工作区
+    QDockWidget *dock2 = new QDockWidget("Work Space 2");
+    // 设置工作区允许拖动的区域
+    dock2->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+
+    // 构造工作区的中央窗口部件
+    QTextEdit *tdt2 = new QTextEdit;
+
+    //设置工作区的中央窗口部件
+    dock2->setWidget(tdt2);
+
+    // 将工作区添加到当前主界面
+    this->addDockWidget(Qt::TopDockWidgetArea,dock2);
+
+    // *********************构造状态栏********************* //
+    // statusBar()：创建一个状态栏，然后整个状态栏 showMessage()显示文本数据
+    // 临时显示，随时会被刷新
+//    statusBar()->showMessage("你吗？");
+
+    QLabel *lab2 = new QLabel("lengths");
+    QLabel *lab3 = new QLabel("     ");
+    QLabel *lab4 = new QLabel("lines");
+    QLabel *lab5 = new QLabel("     ");
 
 }
 
