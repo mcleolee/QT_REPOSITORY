@@ -127,6 +127,19 @@ MainWindow::MainWindow(QWidget *parent)
     QLabel *lab4 = new QLabel("lines");
     QLabel *lab5 = new QLabel("     ");
 
+    lab2->setFixedWidth(80);
+    lab3->setFixedWidth(60);
+    lab4->setFixedWidth(80);
+    lab5->setFixedWidth(60);
+
+    // 添加状态栏，获得首地址
+    QStatusBar *bar = statusBar();
+    //向状态栏添加控件
+    bar->addWidget(lab2);
+    bar->addWidget(lab3);
+    bar->addWidget(lab4);
+    bar->addWidget(lab5);
+
 }
 
 MainWindow::~MainWindow()
