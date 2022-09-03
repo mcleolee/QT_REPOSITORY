@@ -5,6 +5,10 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QAction>
+#include <QToolBar>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
@@ -17,7 +21,8 @@ private:
 //    QMenu * fileMenu;
     // 准备构造四个菜单项
     QAction *newAct, *openAct, *saveAct, *saveAsAct, *closeAct;
-
+    QPushButton *btn;
+    QLineEdit *edt;
 
 };
 #endif // MAINWINDOW_H
