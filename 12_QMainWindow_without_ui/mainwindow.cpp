@@ -71,6 +71,14 @@ MainWindow::MainWindow(QWidget *parent)
     btn = new QPushButton("Jump");
     tool2->addWidget(btn);
 
+    // 构造第三个工具栏
+    QToolBar *tool3 = new QToolBar("built");
+    // 添加工具档到当前界面的某个 初始区域
+    addToolBar(Qt::BottomToolBarArea, tool3);
+    tool3->addWidget(new QLabel("Deteils about "));
+    tool3->addWidget(new QLabel("About"));
+
+
 }
 
 MainWindow::~MainWindow()
