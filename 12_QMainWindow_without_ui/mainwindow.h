@@ -16,7 +16,7 @@ public:
 private:
 //    QMenu * fileMenu;
     // 准备构造四个菜单项
-    QAction *newAct, *openAct, *saveAct, *saveAsAct;
+    QAction *newAct, *openAct, *saveAct, *saveAsAct, *closeAct;
 
 
 };

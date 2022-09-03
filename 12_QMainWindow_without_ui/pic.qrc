@@ -1,13 +1,20 @@
 <RCC>
     <qresource prefix="/">
-        <file>pic_temp/pic/1.jpg</file>
-        <file>pic_temp/pic/2.jpg</file>
-        <file>pic_temp/pic/333.jpg</file>
-        <file>pic_temp/pic/444.jpg</file>
-        <file>pic_temp/pic/aaa.png</file>
-        <file>pic_temp/pic/bbb.png</file>
-        <file>pic_temp/pic/bing.ico</file>
-        <file>pic_temp/pic/fen.jpg</file>
-        <file>pic_temp/pic/Painter.png</file>
+        <file>pic_temp/1.jpg</file>
+        <file>pic_temp/2.jpg</file>
+        <file>pic_temp/333.jpg</file>
+        <file>pic_temp/444.jpg</file>
+        <file>pic_temp/aaa.png</file>
+        <file>pic_temp/bbb.png</file>
+        <file>pic_temp/bing.ico</file>
+        <file>pic_temp/closefile.png</file>
+        <file>pic_temp/fen.jpg</file>
+        <file>pic_temp/lpic.png</file>
+        <file>pic_temp/newfile.png</file>
+        <file>pic_temp/openfile.png</file>
+        <file>pic_temp/Painter.png</file>
+        <file>pic_temp/rpic.jpg</file>
+        <file>pic_temp/saveasfile.png</file>
+        <file>pic_temp/savefile.png</file>
     </qresource>
 </RCC>

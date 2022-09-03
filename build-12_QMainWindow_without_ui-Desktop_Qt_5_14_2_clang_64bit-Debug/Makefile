@@ -239,6 +239,7 @@ DIST          = ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf \
+		../12_QMainWindow_without_ui/.qmake.stash \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf \
@@ -471,6 +472,7 @@ Makefile: ../12_QMainWindow_without_ui/12_QMainWindow_without_ui.pro ../../Qt5.1
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf \
 		../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf \
@@ -685,6 +687,7 @@ Makefile: ../12_QMainWindow_without_ui/12_QMainWindow_without_ui.pro ../../Qt5.1
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/qt_config.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/mac/sdk.prf:
 ../../Qt5.14.2/5.14.2/clang_64/mkspecs/features/toolchain.prf:
@@ -760,6 +763,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r 12_QMainWindow_without_ui.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -781,15 +785,22 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_pic.cpp
 qrc_pic.cpp: ../12_QMainWindow_without_ui/pic.qrc \
 		../../Qt5.14.2/5.14.2/clang_64/bin/rcc \
-		../12_QMainWindow_without_ui/pic_temp/pic/bing.ico \
-		../12_QMainWindow_without_ui/pic_temp/pic/444.jpg \
-		../12_QMainWindow_without_ui/pic_temp/pic/bbb.png \
-		../12_QMainWindow_without_ui/pic_temp/pic/Painter.png \
-		../12_QMainWindow_without_ui/pic_temp/pic/fen.jpg \
-		../12_QMainWindow_without_ui/pic_temp/pic/2.jpg \
-		../12_QMainWindow_without_ui/pic_temp/pic/333.jpg \
-		../12_QMainWindow_without_ui/pic_temp/pic/1.jpg \
-		../12_QMainWindow_without_ui/pic_temp/pic/aaa.png
+		../12_QMainWindow_without_ui/pic_temp/bing.ico \
+		../12_QMainWindow_without_ui/pic_temp/444.jpg \
+		../12_QMainWindow_without_ui/pic_temp/savefile.png \
+		../12_QMainWindow_without_ui/pic_temp/newfile.png \
+		../12_QMainWindow_without_ui/pic_temp/saveasfile.png \
+		../12_QMainWindow_without_ui/pic_temp/bbb.png \
+		../12_QMainWindow_without_ui/pic_temp/closefile.png \
+		../12_QMainWindow_without_ui/pic_temp/Painter.png \
+		../12_QMainWindow_without_ui/pic_temp/fen.jpg \
+		../12_QMainWindow_without_ui/pic_temp/openfile.png \
+		../12_QMainWindow_without_ui/pic_temp/2.jpg \
+		../12_QMainWindow_without_ui/pic_temp/lpic.png \
+		../12_QMainWindow_without_ui/pic_temp/333.jpg \
+		../12_QMainWindow_without_ui/pic_temp/1.jpg \
+		../12_QMainWindow_without_ui/pic_temp/rpic.jpg \
+		../12_QMainWindow_without_ui/pic_temp/aaa.png
 	/Users/raven/Qt5.14.2/5.14.2/clang_64/bin/rcc -name pic ../12_QMainWindow_without_ui/pic.qrc -o qrc_pic.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
