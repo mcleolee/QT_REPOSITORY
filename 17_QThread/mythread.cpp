@@ -14,5 +14,6 @@ void MyThread::run()
         i++;
 
         emit dataChange(i);
+//        msleep(10);
     }
 }
