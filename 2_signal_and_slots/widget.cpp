@@ -17,7 +17,7 @@ Widget::~Widget()
 void Widget::on_comfirm_pushButton_clicked()
 {
     // text():获取文本数据，返回 QString 类型，QString 为 Qt 中的字符串类型
-//    qDebug() << "------comfirm------" << ui->edit_comfirm->text();
+    // qDebug() << "------comfirm------" << ui->edit_comfirm->text();
 
     QString str = ui->edit_comfirm->text();
     qDebug() << str;

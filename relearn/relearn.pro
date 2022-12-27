@@ -2,7 +2,10 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+# must add "， sdk_no_version_check"
+CONFIG += c++11， sdk_no_version_check
+# must add the next line of code
+QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -17,9 +20,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    test.cpp \
     widget.cpp
 
 HEADERS += \
+    MyHeader.h \
     widget.h
 
 FORMS += \
@@ -29,3 +34,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc

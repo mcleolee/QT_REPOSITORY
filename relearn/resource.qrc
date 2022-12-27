@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="1.png">catIcon.png</file>
+        <file>cat_2.PNG</file>
+        <file>train.JPG</file>
+    </qresource>
+</RCC>
