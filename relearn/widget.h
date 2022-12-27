@@ -37,6 +37,12 @@
 
 #include <QListWidget>
 
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QInputDialog>
+#include <QColor>
+
+
 // 转语音，好像用不了
 // #include <QTextToSpeech>
 
@@ -76,6 +82,8 @@ private slots:
     void on_list_1_itemDoubleClicked(QListWidgetItem *item);
 
     void on_btn_add_clicked();
+
+    void on_btn_file_clicked();
 
 private:
     // 定义不完整类型的 ui 野指针

@@ -17,6 +17,7 @@
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -45,15 +46,24 @@ public:
     QPushButton *btn_add;
     QSpacerItem *verticalSpacer;
     QLabel *label_list;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *verticalLayout_3;
+    QTextEdit *textEdit;
+    QHBoxLayout *horizontalLayout_5;
+    QPushButton *btn_file;
+    QPushButton *btn_message;
+    QPushButton *btn_input;
+    QPushButton *btn_color;
+    QPushButton *btn_font;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(713, 450);
+        Widget->resize(935, 506);
         testQDebug = new QPushButton(Widget);
         testQDebug->setObjectName(QString::fromUtf8("testQDebug"));
-        testQDebug->setGeometry(QRect(520, 50, 113, 32));
+        testQDebug->setGeometry(QRect(820, 0, 113, 32));
         label = new QLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 10, 271, 31));
@@ -98,7 +108,7 @@ public:
 
         horizontalLayoutWidget_3 = new QWidget(Widget);
         horizontalLayoutWidget_3->setObjectName(QString::fromUtf8("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(60, 230, 371, 171));
+        horizontalLayoutWidget_3->setGeometry(QRect(440, 40, 371, 171));
         horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_3);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -136,6 +146,47 @@ public:
 
         horizontalLayout_3->addLayout(verticalLayout_2);
 
+        verticalLayoutWidget_3 = new QWidget(Widget);
+        verticalLayoutWidget_3->setObjectName(QString::fromUtf8("verticalLayoutWidget_3"));
+        verticalLayoutWidget_3->setGeometry(QRect(70, 230, 731, 181));
+        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget_3);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        textEdit = new QTextEdit(verticalLayoutWidget_3);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        verticalLayout_3->addWidget(textEdit);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        btn_file = new QPushButton(verticalLayoutWidget_3);
+        btn_file->setObjectName(QString::fromUtf8("btn_file"));
+
+        horizontalLayout_5->addWidget(btn_file);
+
+        btn_message = new QPushButton(verticalLayoutWidget_3);
+        btn_message->setObjectName(QString::fromUtf8("btn_message"));
+
+        horizontalLayout_5->addWidget(btn_message);
+
+        btn_input = new QPushButton(verticalLayoutWidget_3);
+        btn_input->setObjectName(QString::fromUtf8("btn_input"));
+
+        horizontalLayout_5->addWidget(btn_input);
+
+        btn_color = new QPushButton(verticalLayoutWidget_3);
+        btn_color->setObjectName(QString::fromUtf8("btn_color"));
+
+        horizontalLayout_5->addWidget(btn_color);
+
+        btn_font = new QPushButton(verticalLayoutWidget_3);
+        btn_font->setObjectName(QString::fromUtf8("btn_font"));
+
+        horizontalLayout_5->addWidget(btn_font);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_5);
+
 
         retranslateUi(Widget);
 
@@ -150,6 +201,11 @@ public:
         btm_comfirm->setText(QCoreApplication::translate("Widget", "Comfirm", nullptr));
         btn_add->setText(QCoreApplication::translate("Widget", "Add", nullptr));
         label_list->setText(QCoreApplication::translate("Widget", " 69", nullptr));
+        btn_file->setText(QCoreApplication::translate("Widget", "File", nullptr));
+        btn_message->setText(QCoreApplication::translate("Widget", "Message", nullptr));
+        btn_input->setText(QCoreApplication::translate("Widget", "Input", nullptr));
+        btn_color->setText(QCoreApplication::translate("Widget", "Color", nullptr));
+        btn_font->setText(QCoreApplication::translate("Widget", "Font", nullptr));
     } // retranslateUi
 
 };

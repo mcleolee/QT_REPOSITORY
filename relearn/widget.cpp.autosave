@@ -115,3 +115,9 @@ void Widget::on_btn_file_clicked()
 
     ui->textEdit->append(filename);
 }
+
+// message
+void Widget::on_btn_message_clicked()
+{
+    
+}
