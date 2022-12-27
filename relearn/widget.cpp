@@ -63,3 +63,42 @@ void Widget::on_testQDebug_clicked()
 {
     testDebug();
 }
+
+// 在列表部件中点击任意一行，都会 触发 currentRowChanged (int currentRow)信号，
+// 并将当前的行号通过形参传递
+void Widget::on_list_1_currentRowChanged(int currentRow)
+{
+    ui->label_list->setText(QString::number(currentRow));
+}
+
+// 在列表框中双击某个列表项，则触发itemDoubleclicked (QListwidgetItem *item) 信号
+// 并将这个列表项的首地址传递出来，QListwidgetItem:列表项的头文件
+void Widget::on_list_1_itemDoubleClicked(QListWidgetItem *item)
+{
+    // item->text：获取列表项的文本数据
+    ui->label_list->setText(item->text());
+    //通过列表项首地址获得 其在列表框中的行号
+    qDebug() << ui->list_1 -> row(item);
+}
+
+void Widget::on_btn_add_clicked()
+{
+    QString name = ui->lineEdit_3->text();
+    // insertItem(int row, ostring text)：在row行插入text列表项
+    ui->list_1->insertItem(0,name);
+    // 输完一个数字就清零，方便输下一个
+    ui->lineEdit_3->clear();
+
+    // 插入一个构造的列表项
+//    ui->listWidget->insertItem(0, new QListWidgetItem(QIcon("qwq.jpg")),name);
+
+    //在列表框的末尾添加 带图标的列表项
+//    ui->listWidget->addItem(new QListWidgetItem(QIcon("qwq.jpg"),name));
+}
+
+// ---------------------QDialog------------------------
+// file
+void Widget::on_btn_file_clicked()
+{
+
+}

@@ -14,6 +14,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
@@ -35,15 +36,24 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *lineEdit_2;
     QSpacerItem *horizontalSpacer;
+    QWidget *horizontalLayoutWidget_3;
+    QHBoxLayout *horizontalLayout_3;
+    QListWidget *list_1;
+    QVBoxLayout *verticalLayout_2;
+    QLineEdit *lineEdit_3;
+    QHBoxLayout *horizontalLayout_4;
+    QPushButton *btn_add;
+    QSpacerItem *verticalSpacer;
+    QLabel *label_list;
 
     void setupUi(QWidget *Widget)
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QString::fromUtf8("Widget"));
-        Widget->resize(483, 304);
+        Widget->resize(713, 450);
         testQDebug = new QPushButton(Widget);
         testQDebug->setObjectName(QString::fromUtf8("testQDebug"));
-        testQDebug->setGeometry(QRect(10, 240, 113, 32));
+        testQDebug->setGeometry(QRect(520, 50, 113, 32));
         label = new QLabel(Widget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(60, 10, 271, 31));
@@ -86,6 +96,46 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        horizontalLayoutWidget_3 = new QWidget(Widget);
+        horizontalLayoutWidget_3->setObjectName(QString::fromUtf8("horizontalLayoutWidget_3"));
+        horizontalLayoutWidget_3->setGeometry(QRect(60, 230, 371, 171));
+        horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_3);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        list_1 = new QListWidget(horizontalLayoutWidget_3);
+        list_1->setObjectName(QString::fromUtf8("list_1"));
+
+        horizontalLayout_3->addWidget(list_1);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        lineEdit_3 = new QLineEdit(horizontalLayoutWidget_3);
+        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
+
+        verticalLayout_2->addWidget(lineEdit_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        btn_add = new QPushButton(horizontalLayoutWidget_3);
+        btn_add->setObjectName(QString::fromUtf8("btn_add"));
+
+        horizontalLayout_4->addWidget(btn_add);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_4);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Preferred);
+
+        verticalLayout_2->addItem(verticalSpacer);
+
+        label_list = new QLabel(horizontalLayoutWidget_3);
+        label_list->setObjectName(QString::fromUtf8("label_list"));
+
+        verticalLayout_2->addWidget(label_list);
+
+
+        horizontalLayout_3->addLayout(verticalLayout_2);
+
 
         retranslateUi(Widget);
 
@@ -98,6 +148,8 @@ public:
         testQDebug->setText(QCoreApplication::translate("Widget", "Test QDebug", nullptr));
         label->setText(QCoreApplication::translate("Widget", "\347\202\271\345\207\273 Comfirm \346\212\212\347\254\254\344\270\200\350\241\214\347\232\204\346\226\207\345\255\227\345\244\215\345\210\266\345\210\260\347\254\254\344\272\214\350\241\214", nullptr));
         btm_comfirm->setText(QCoreApplication::translate("Widget", "Comfirm", nullptr));
+        btn_add->setText(QCoreApplication::translate("Widget", "Add", nullptr));
+        label_list->setText(QCoreApplication::translate("Widget", " 69", nullptr));
     } // retranslateUi
 
 };
