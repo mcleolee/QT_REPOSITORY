@@ -115,3 +115,40 @@ void Widget::on_btn_file_clicked()
 
     ui->textEdit->append(filename);
 }
+
+// message
+void Widget::on_btn_message_clicked()
+{
+    int ret = QMessageBox::critical(this,"Warning","Here occured a error",QMessageBox::Ok,QMessageBox::Cancel,QMessageBox::Help);
+    // 通过返回值判断，用户选择了消息对话框的哪个按钮
+    if(ret == QMessageBox::Cancel)
+    {
+        return;
+    }
+}
+
+// input
+void Widget::on_btn_input_clicked()
+{
+    QString passwd = QInputDialog::getText(this,"input","password:",QLineEdit::Password);
+    if(passwd.isEmpty())
+    {
+        QMessageBox::warning(this,"warning","enter the password plz");
+        return;
+    }
+    ui->textEdit->append(passwd);
+}
+
+
+// color
+void Widget::on_btn_color_clicked()
+{
+    ui->textEdit->setTextColor("128,128,128");
+}
+
+// font
+void Widget::on_btn_font_clicked()
+{
+    ui->textEdit->setFontItalic(1);
+}
+// ------------------end QDialog------------------------

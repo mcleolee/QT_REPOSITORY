@@ -83,8 +83,17 @@ private slots:
 
     void on_btn_add_clicked();
 
+    // ---------------------QDialog------------------------
     void on_btn_file_clicked();
 
+    void on_btn_message_clicked();
+
+    void on_btn_input_clicked();
+
+    void on_btn_color_clicked();
+
+    void on_btn_font_clicked();
+    // -----------------end QDialog------------------------
 private:
     // 定义不完整类型的 ui 野指针
     // 用来操作（访问）ui 界面控件
